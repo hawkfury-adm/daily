@@ -2,9 +2,9 @@ name: CI
 
 on:
   push:
-    branches: master
+    branches: main
   pull_request:
-    branches: master
+    branches: main
   schedule:
     # workwaround for cannot set timezone, cron will start on Asia/Taipei 02:00
     - cron: "0 18 * * *"
