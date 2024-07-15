@@ -27,6 +27,7 @@ cat apple.conf google.conf china.conf |
   # remove duplicates
   awk '!x[$0]++' > chinalist.txt
 
+cd $CUR_DIR
 install -D -m 644 $TMP_DIR/chinalist.txt $DEST_FILE
 
 rm -rf $TMP_DIR
