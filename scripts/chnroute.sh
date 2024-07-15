@@ -29,6 +29,7 @@ cat apnic.txt | grep ipv6 | grep CN | awk -F\| '{ printf("%s/%d\n", $4, $5) }' >
 # ipv6 cidr merge
 cat apnic-v6.tmp | $CUR_DIR/tools/ip-dedup -6 > chnroute6.txt
 
+cd $CUR_DIR
 install -D -m 644 $TMP_DIR/chnroute.txt $DEST_FILE_1
 install -D -m 644 $TMP_DIR/chnroute6.txt $DEST_FILE_2
 
