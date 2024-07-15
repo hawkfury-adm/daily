@@ -16,7 +16,7 @@ on:
         default: '0'
 
 env:
-  TZ: Asia/Taipei
+  TZ: Asia/Shanghai
 
 jobs:
   build:
