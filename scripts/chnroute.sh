@@ -21,13 +21,13 @@ cat apnic.txt | grep ipv4 | grep CN | awk -F\| '{ printf("%s/%d\n", $4, 32-log($
 sed '$a\' ipip-v4.txt > ipip-v4.tmp
 
 # ipv4 cidr merge
-cat apnic-v4.tmp ipip-v4.tmp | $CUR_DIR/tools/ip-dedup/obj/ip-dedup -4 > chnroute.txt
+cat apnic-v4.tmp ipip-v4.tmp | $CUR_DIR/tools/ip-dedup -4 > chnroute.txt
 
 # convert to cidr format
 cat apnic.txt | grep ipv6 | grep CN | awk -F\| '{ printf("%s/%d\n", $4, $5) }' > apnic-v6.tmp
 
 # ipv6 cidr merge
-cat apnic-v6.tmp | $CUR_DIR/tools/ip-dedup/obj/ip-dedup -6 > chnroute6.txt
+cat apnic-v6.tmp | $CUR_DIR/tools/ip-dedup -6 > chnroute6.txt
 
 install -D -m 644 $TMP_DIR/chnroute.txt $DEST_FILE_1
 install -D -m 644 $TMP_DIR/chnroute6.txt $DEST_FILE_2
