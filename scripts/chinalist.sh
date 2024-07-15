@@ -29,5 +29,5 @@ cat apple.conf google.conf china.conf |
 
 install -D -m 644 $TMP_DIR/chinalist.txt $DEST_FILE
 
-rm -r $TMP_DIR
+rm -rf $TMP_DIR
 echo "[$(basename $0 .sh)]: done."
