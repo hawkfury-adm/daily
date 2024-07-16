@@ -7,13 +7,13 @@ on:
     branches: main
   schedule:
     # workwaround for cannot set timezone, cron will start on Asia/Shanghai 03:15
-    - cron: "3 3 * * *"
+    - cron: "15 19 * * *"
   workflow_dispatch:
     inputs:
       deploy:
         description: 'Whether to deploy to hf-pages branch'
         required: true
-        default: '0'
+        default: '1'
 
 env:
   TZ: Asia/Shanghai
