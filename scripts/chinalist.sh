@@ -11,9 +11,9 @@ DEST_FILE="dist/chinalist.txt"
 
 cd $TMP_DIR
 
-curl -sSL $SRC_URL_1 -o apple.conf
-curl -sSL $SRC_URL_2 -o google.conf
-curl -sSL $SRC_URL_3 -o china.conf
+curl -4fsSL $SRC_URL_1 -o apple.conf
+curl -4fsSL $SRC_URL_2 -o google.conf
+curl -4fsSL $SRC_URL_3 -o china.conf
 
 cat apple.conf google.conf china.conf |
   # remove empty lines
