@@ -5,3 +5,6 @@ scripts/chinalist.sh
 
 # chnroute
 scripts/chnroute.sh
+
+# cacert.pem
+scripts/cacert.sh
