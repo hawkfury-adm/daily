@@ -11,8 +11,8 @@ DEST_FILE_2="dist/chnroute6.txt"
 
 cd $TMP_DIR
 
-curl -sSL $SRC_URL_1 -o apnic.txt
-curl -sSL $SRC_URL_2 -o ipip-v4.txt
+curl -4fsSL $SRC_URL_1 -o apnic.txt
+curl -4fsSL $SRC_URL_2 -o ipip-v4.txt
 
 
 # convert to cidr format
