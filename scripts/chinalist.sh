@@ -27,8 +27,11 @@ cat apple.conf google.conf china.conf |
   # remove duplicates
   awk '!x[$0]++' > chinalist.txt
 
+sed "s|^|nameserver /|" chinalist.txt | sed "s|$|/china|" > smartdns.conf
+
 cd $CUR_DIR
 install -D -m 644 $TMP_DIR/chinalist.txt $DEST_FILE
+install -D -m 644 $TMP_DIR/smartdns.conf dist/smartdns.conf
 
 rm -rf $TMP_DIR
 echo "[$(basename $0 .sh)]: done."
