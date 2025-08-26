@@ -7,7 +7,7 @@ on:
     branches: main
   schedule:
     # workwaround for cannot set timezone, cron will start on Asia/Shanghai 03:15
-    - cron: "*/15 * * * *"
+    - cron: "0,5,10,15,20,25,30,35,40,45,50,55 * * * *"
   workflow_dispatch:
     inputs:
       deploy:
