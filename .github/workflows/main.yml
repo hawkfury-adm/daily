@@ -39,6 +39,6 @@ jobs:
           git config user.name hawkfury-adm
           git config user.email admin@hawkfury.com
           git add .
-          export GIT_COMMITTER_DATE="$(TZ=CST-8 date '+%Y-%m-%d %H:%M:%S %:z')" 
-          git commit -m "zhm: $(TZ=CST-8 date '+%Y-%m-%d %H:%M:%S %:z')" || true
+          GIT_COMMITTER_DATE="$(TZ=CST-8 date '+%Y-%m-%d %H:%M:%S %:z')" 
+          git commit -m "zhm: $(TZ=CST-8 date '+%Y-%m-%d %H:%M:%S %:z')" --amend --no-edit || true
           git push https://${{ github.repository_owner }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git hf-pages
