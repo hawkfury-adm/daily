@@ -7,7 +7,7 @@ on:
     branches: main
   schedule:
     # workwaround for cannot set timezone, cron will start on Asia/Shanghai 03:15
-    - cron: "0,5,10,15,20,25,30,35,40,45,50,55 * * * *"
+    - cron: "15 19 * * *"
   workflow_dispatch:
     inputs:
       deploy:
@@ -39,5 +39,5 @@ jobs:
           git config user.name hawkfury-adm
           git config user.email admin@hawkfury.com
           git add .
-          GIT_COMMITTER_DATE=format:iso8601:"2025-08-26 09:27:40 +0800" git commit -m "zhm: $(TZ=CST-8 date '+%Y-%m-%d %H:%M:%S %:z')" || true
+          git commit -m "$(TZ=CST-8 date '+%Y-%m-%d %H:%M:%S %z')" || true
           git push https://${{ github.repository_owner }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git hf-pages
