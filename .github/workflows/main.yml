@@ -36,8 +36,8 @@ jobs:
           cp -rf dist/* hf-pages
           # push to hf-pages
           cd hf-pages
-          git config user.name hawkfury-adm
-          git config user.email admin@hawkfury.com
+          git config user.name tonsadm
+          git config user.email tonsadm01@gmail.com
           git add .
           git commit -m "$(TZ=CST-8 date '+%Y-%m-%d %H:%M:%S %z')" || true
           git push https://${{ github.repository_owner }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git hf-pages
